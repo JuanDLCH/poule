@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "409582609500",
+    "project_id": "poule-23358",
+    "storage_bucket": "poule-23358.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409582609500:android:ea9db02c4ebf78309eb299",
+        "android_client_info": {
+          "package_name": "com.example.poule"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409582609500-la3o448492m97ctcrpcfduo4a603ni75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1cUR0XLlLnyq5RBW06mZSpTjMzPds7_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "409582609500-la3o448492m97ctcrpcfduo4a603ni75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/drawable/ic_icon.xml" value="0.3828125" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/drawable/ic_index_background.xml" value="0.3611111111111111" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.23560910307898258" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/layout-w936dp/activity_login.xml" value="0.275" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/layout/activity_login.xml" value="0.5" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/layout/activity_main_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/mipmap-anydpi-v26/ic_index.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/mipmap-anydpi-v26/ic_index_round.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/juand/OneDrive/Documents/UdeM/6to Semestre/Proyecto Software III/poule/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable-anydpi/ic_action_mail.xml" value="0.2203125" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable-v24/gradient.xml" value="0.3828125" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable-v24/my_button.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_calendar.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_city.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.3828125" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_mail_24.xml" value="0.2203125" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_pass.xml" value="0.3828125" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_person.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/drawable/round_button.xml" value="0.3828125" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_main2.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_main_screen.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_registro.xml" value="0.25" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_registro_datos.xml" value="0.3680203045685279" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/layout/activity_registro_vehiculo.xml" value="0.33" />
+        <entry key="..\:/Users/soy_c/Desktop/poule/app/src/main/res/mipmap-anydpi-v26/ic_index.xml" value="0.221875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

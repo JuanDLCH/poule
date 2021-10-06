@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegistroVehiculo"
+    android:background="@drawable/gradient">
+    <EditText
+        android:id="@+id/txtPlaca"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_above="@+id/txtMatricula"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="6dp"
+        android:background="#11000000"
+        android:textCursorDrawable="@null"
+        android:drawableLeft="@drawable/ic_baseline_matri"
+        android:hint="Placa"
+        android:textColor="#fff"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="16dp"
+        android:inputType="textEmailAddress"/>/>
+
+
+    <EditText
+        android:id="@+id/txtMatricula"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="300dp"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_baseline_matri"
+        android:ellipsize="start"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="N° de Matricula"
+        android:textColor="#fff"
+
+        android:textColorHint="@android:color/darker_gray"
+        android:textCursorDrawable="@null" />
+
+    <EditText
+        android:id="@+id/txtCedula"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="254dp"
+        android:textCursorDrawable="@null"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_baseline_credit_card_24"
+        android:ellipsize="start"
+        android:ems="10"
+        android:focusable="false"
+        android:textColor="#fff"
+        android:textColorHint="@android:color/darker_gray" />
+    <EditText
+        android:id="@+id/txtDateSoat"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="208dp"
+        android:textCursorDrawable="@null"
+        android:background="#11000000"
+        android:drawableLeft="@drawable/ic_baseline_calendar"
+        android:ellipsize="start"
+        android:ems="10"
+        android:hint="Fecha Ven. Soat"
+        android:inputType="date"
+        android:focusable="false"
+        android:clickable="true"
+        android:textColor="#fff"
+        android:textColorHint="@android:color/darker_gray" />
+
+    <Button
+        android:id="@+id/btnRegistrarV"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="67dp"
+        android:background="@drawable/my_button"
+        android:elevation="10dp"
+        android:text="Registrar"
+        android:textColor="#20537E"
+        android:textSize="18dp" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+
+        android:layout_centerHorizontal="true"
+        app:lottie_rawRes="@raw/form"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true">
+
+    </com.airbnb.lottie.LottieAnimationView>
+    <TextView
+        android:layout_width="200sp"
+        android:layout_height="35sp"
+        android:text="Seleccione el tipo de vehiculo:"
+        android:textColor="#fff"
+        android:layout_marginTop="280sp"
+        android:layout_centerHorizontal="true"
+        >
+    </TextView>
+    <RadioGroup
+        android:layout_width="200sp"
+        android:layout_height="35sp"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carro"
+            android:id="@+id/rbtnCarro"
+            android:textColor="#fff"
+            android:buttonTint="@color/white"
+            android:checked="false"
+            >
+
+        </RadioButton>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moto"
+            android:id="@+id/rbtnMoto"
+            android:textColor="#fff"
+            android:buttonTint="@color/white"
+            android:layout_marginLeft="58sp"
+            android:checked="false"
+            >
+
+        </RadioButton>
+    </RadioGroup>
+
+</RelativeLayout>
