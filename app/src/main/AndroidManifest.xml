@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".EdicionDatos"
+            android:exported="true" />
+        <activity
+            android:name=".PerfilUsuario"
+            android:exported="true" />
+        <activity
             android:name=".RegistroVehiculo"
             android:exported="true" />
         <activity

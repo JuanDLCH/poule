@@ -24,7 +24,6 @@ public class Registro extends AppCompatActivity {
     private String TAG;
     EditText txtNombreR,txtContraR,txtConfirmar;
     Button btnRegistrar;
-    int puntajeJ = 0;
     private FirebaseAuth mAuth;
 
     //public static ArrayList<Usuario> usuario = new ArrayList<Usuario>();

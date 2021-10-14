@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegistroDatos extends AppCompatActivity {
     private String TAG;
     EditText txtNombre,txtApellidos,txtDNI,txtDireccion,txtDate, txtEmail;
-    Button btnRegistro;
+    Button btnRegistro, btnRegistroC;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
 
@@ -34,6 +34,7 @@ public class RegistroDatos extends AppCompatActivity {
         getEmail();
         datePicker();
         Registrar();
+        RegistrarConductor();
 
 
     }
@@ -70,6 +71,7 @@ public class RegistroDatos extends AppCompatActivity {
         txtDNI = findViewById(R.id.txtDNI);
         txtDate = findViewById(R.id.txtDate);
         btnRegistro = findViewById(R.id.btnRegistrar);
+        btnRegistroC = findViewById(R.id.btnRegistrarC);
         txtEmail = findViewById(R.id.txtEmail);
 
     }
@@ -77,11 +79,35 @@ public class RegistroDatos extends AppCompatActivity {
         btnRegistro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RegistroDatos.this,RegistroVehiculo.class);
-                startActivity(intent);
                 if(!(txtNombre.getText().toString().isEmpty() && txtDireccion.getText().toString().isEmpty() &&
                         txtApellidos.getText().toString().isEmpty() && txtDNI.getText().toString().isEmpty() && txtDate.getText().toString().isEmpty())){
                     RegistrarBD();
+                    Intent intent = new Intent(RegistroDatos.this,Home.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(getApplicationContext(),"Ingrese todos los campos",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private void RegistrarConductor(){
+        btnRegistroC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!(txtNombre.getText().toString().isEmpty() && txtDireccion.getText().toString().isEmpty() &&
+                        txtApellidos.getText().toString().isEmpty() && txtDNI.getText().toString().isEmpty() && txtDate.getText().toString().isEmpty())){
+                    RegistrarBD();
+                    mDatabase = FirebaseDatabase.getInstance().getReference();
+                    String DNI = txtDNI.getText().toString();
+                    String email = getEmail();
+                    Conductor conductor = new Conductor();
+                    conductor.setDni(DNI);
+                    conductor.setEmail(email);
+                    DatabaseReference newRef = mDatabase.child("Conductores").push();
+                    newRef.setValue(conductor);
+                    Intent intent = new Intent(RegistroDatos.this,RegistroVehiculo.class);
+                    startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),"Ingrese todos los campos",Toast.LENGTH_LONG).show();
                 }

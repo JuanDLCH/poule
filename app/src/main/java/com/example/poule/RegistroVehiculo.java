@@ -32,7 +32,7 @@ public class RegistroVehiculo extends AppCompatActivity {
     private DatabaseReference mDatabase;
     private String TAG;
     Button btnRegistrarV;
-    EditText txtSoat, txtCedula, txtPlaca, txtMatricula;
+    EditText txtSoat, txtCedula, txtPlaca, txtMatricula, txtMarca, txtModelo;
     RadioButton rbtnCarro, rbtnMoto;
     String cedula;
 
@@ -48,6 +48,8 @@ public class RegistroVehiculo extends AppCompatActivity {
             carro.setPlaca(txtPlaca.getText().toString());
             carro.setCedulaConductor(txtCedula.getText().toString());
             carro.setSoatVigente(txtSoat.getText().toString());
+            carro.setMarca(txtMarca.getText().toString());
+            carro.setModelo(txtModelo.getText().toString());
             DatabaseReference newRef = mDatabase.child("Vehiculos").child("Carros").push();
             newRef.setValue(carro);
             return carro;
@@ -66,6 +68,8 @@ public class RegistroVehiculo extends AppCompatActivity {
             moto.setPlaca(txtPlaca.getText().toString());
             moto.setCedulaConductor(txtCedula.getText().toString());
             moto.setSoatVigente(txtSoat.getText().toString());
+            moto.setMarca(txtMarca.getText().toString());
+            moto.setModelo(txtModelo.getText().toString());
             DatabaseReference newRef = mDatabase.child("Vehiculos").child("Motos").push();
             newRef.setValue(moto);
             return moto;
@@ -91,6 +95,8 @@ public class RegistroVehiculo extends AppCompatActivity {
         btnRegistrarV = findViewById(R.id.btnRegistrarV);
         rbtnMoto = findViewById(R.id.rbtnMoto);
         rbtnCarro = findViewById(R.id.rbtnCarro);
+        txtModelo = findViewById(R.id.txtModelo);
+        txtMarca = findViewById(R.id.txtMarca);
         getCedula();
 
     }
