@@ -36,25 +36,25 @@ public class Home extends AppCompatActivity {
         btnVehiculos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this,PerfilUsuario.class);
+                Intent intent = new Intent(Home.this,VehiculosUsusario.class);
                 startActivity(intent);
             }
         });
-        btnViajes.setOnClickListener(new View.OnClickListener() {
+      /*  btnViajes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this,PerfilUsuario.class);
+                Intent intent = new Intent(Home.this,MainScreen.class);
                 startActivity(intent);
             }
         });
         btnRutas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this,PerfilUsuario.class);
+                Intent intent = new Intent(Home.this,MainScreen.class);
                 startActivity(intent);
             }
         });
-
+*/
 
     }
 }

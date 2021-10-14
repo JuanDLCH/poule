@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".VehiculosUsusario"
+            android:exported="true" />
+        <activity
             android:name=".EdicionDatos"
             android:exported="true" />
         <activity

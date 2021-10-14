@@ -50,6 +50,7 @@ public class RegistroVehiculo extends AppCompatActivity {
             carro.setSoatVigente(txtSoat.getText().toString());
             carro.setMarca(txtMarca.getText().toString());
             carro.setModelo(txtModelo.getText().toString());
+            carro.setEmail(getEmail());
             DatabaseReference newRef = mDatabase.child("Vehiculos").child("Carros").push();
             newRef.setValue(carro);
             return carro;
@@ -70,6 +71,7 @@ public class RegistroVehiculo extends AppCompatActivity {
             moto.setSoatVigente(txtSoat.getText().toString());
             moto.setMarca(txtMarca.getText().toString());
             moto.setModelo(txtModelo.getText().toString());
+            moto.setEmail(getEmail());
             DatabaseReference newRef = mDatabase.child("Vehiculos").child("Motos").push();
             newRef.setValue(moto);
             return moto;
@@ -97,6 +99,7 @@ public class RegistroVehiculo extends AppCompatActivity {
         rbtnCarro = findViewById(R.id.rbtnCarro);
         txtModelo = findViewById(R.id.txtModelo);
         txtMarca = findViewById(R.id.txtMarca);
+
         getCedula();
 
     }

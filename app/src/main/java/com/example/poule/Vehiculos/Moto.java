@@ -3,7 +3,15 @@ package com.example.poule.Vehiculos;
 import com.example.poule.Interfaces.Vehiculo;
 
 public class Moto implements Vehiculo {
-    private String codigo, placa, cedulaConductor, SoatVigente, marca, modelo;
+    private String codigo, placa, cedulaConductor, SoatVigente, marca, modelo, email;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public String getMarca() {
         return marca;

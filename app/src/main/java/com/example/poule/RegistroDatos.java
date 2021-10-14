@@ -81,8 +81,9 @@ public class RegistroDatos extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(txtNombre.getText().toString().isEmpty() && txtDireccion.getText().toString().isEmpty() &&
                         txtApellidos.getText().toString().isEmpty() && txtDNI.getText().toString().isEmpty() && txtDate.getText().toString().isEmpty())){
-                    RegistrarBD();
+                    RegistrarBD("usuario");
                     Intent intent = new Intent(RegistroDatos.this,Home.class);
+                    Toast.makeText(getApplicationContext(),"Registro exitoso",Toast.LENGTH_LONG).show();
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),"Ingrese todos los campos",Toast.LENGTH_LONG).show();
@@ -97,16 +98,9 @@ public class RegistroDatos extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(txtNombre.getText().toString().isEmpty() && txtDireccion.getText().toString().isEmpty() &&
                         txtApellidos.getText().toString().isEmpty() && txtDNI.getText().toString().isEmpty() && txtDate.getText().toString().isEmpty())){
-                    RegistrarBD();
-                    mDatabase = FirebaseDatabase.getInstance().getReference();
-                    String DNI = txtDNI.getText().toString();
-                    String email = getEmail();
-                    Conductor conductor = new Conductor();
-                    conductor.setDni(DNI);
-                    conductor.setEmail(email);
-                    DatabaseReference newRef = mDatabase.child("Conductores").push();
-                    newRef.setValue(conductor);
+                    RegistrarBD("conductor");
                     Intent intent = new Intent(RegistroDatos.this,RegistroVehiculo.class);
+                    Toast.makeText(getApplicationContext(),"Registro exitoso",Toast.LENGTH_LONG).show();
                     startActivity(intent);
                 }else{
                     Toast.makeText(getApplicationContext(),"Ingrese todos los campos",Toast.LENGTH_LONG).show();
@@ -115,7 +109,7 @@ public class RegistroDatos extends AppCompatActivity {
         });
     }
 
-    private void RegistrarBD(){
+    private void RegistrarBD(String rol){
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         String nombre = txtNombre.getText().toString();
@@ -132,6 +126,7 @@ public class RegistroDatos extends AppCompatActivity {
             usuario.setDni(DNI);
             usuario.setFechaNacimiento(date);
             usuario.setEmail(email);
+            usuario.setRol(rol);
             DatabaseReference newRef = mDatabase.child("Usuarios").push();
             newRef.setValue(usuario);
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +28,7 @@ public class EdicionDatos extends AppCompatActivity {
     EditText txtNombre, txtApellidos, txtCedula, txtDireccion, txtFecha, txtEmail;
     Button btnGuardar, btnCancelar;
     String key;
+    ImageButton btnPerfil, btnVehiculos, btnRutas, btnViajes;
     private DatabaseReference mDatabase;
 
     @Override
@@ -48,7 +50,10 @@ public class EdicionDatos extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmail);
         btnGuardar = findViewById(R.id.btnGuardar);
         btnCancelar = findViewById(R.id.btnCancelar);
-
+        btnPerfil = findViewById(R.id.btnPerfil);
+        btnViajes = findViewById(R.id.btnViajes);
+        btnVehiculos = findViewById(R.id.btnVehiculos);
+        btnRutas = findViewById(R.id.btnRutas);
     }
 
     private String getEmail() {
@@ -136,6 +141,39 @@ public class EdicionDatos extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+    }
+
+    public void transiciones(){
+        btnPerfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EdicionDatos.this,PerfilUsuario.class);
+                startActivity(intent);
+            }
+        });
+        btnVehiculos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EdicionDatos.this,VehiculosUsusario.class);
+                startActivity(intent);
+            }
+        });
+        /*btnViajes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EdicionDatos.this,MainScreen.class);
+                startActivity(intent);
+            }
+        });
+        btnRutas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(EdicionDatos.this,MainScreen.class);
+                startActivity(intent);
+            }
+        });*/
+
 
     }
 }
