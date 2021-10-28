@@ -40,6 +40,7 @@ public class VehiculosUsusario extends AppCompatActivity {
         conectar();
         listarCarros();
         listarMotos();
+        transiciones();
     }
 
     private void listarCarros() {
@@ -176,4 +177,6 @@ public class VehiculosUsusario extends AppCompatActivity {
 */
 
     }
+
+
 }

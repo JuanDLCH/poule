@@ -2,10 +2,18 @@ package com.example.poule;
 
 public class Usuario {
 
-    private String Nombre, Apellidos, dni, direccion, fechaNacimiento, email, rol;
+    private String Nombre, Apellidos, dni, direccion, fechaNacimiento, email, rol, url;
 
     public String getNombre() {
         return Nombre;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getRol() {

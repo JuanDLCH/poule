@@ -1,19 +1,28 @@
 package com.example.poule;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.firebase.ui.storage.images.FirebaseImageLoader;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,17 +32,25 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.HashMap;
 
 public class PerfilUsuario extends AppCompatActivity {
     EditText txtNombre,txtApellidos,txtCedula,txtDireccion,txtFecha, txtEmail;
     ImageButton btnPerfil, btnVehiculos, btnRutas, btnViajes;
-    Button btnEditar, btnConductor;
+    FloatingActionButton btnEditar, btnConductor, bntImagen;
+    ImageView ivPerfil;
     String Rol;
-    String key;
+    String key, URL;
+    Uri uri;
+    public static final int PICK_IMAGE = 1;
     private DatabaseReference mDatabase;
     private FirebaseAuth mAuth;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +59,8 @@ public class PerfilUsuario extends AppCompatActivity {
         getDatos();
         conductor();
         editar();
+        transiciones();
+        getImagen();
     }
 
     private void conductor() {
@@ -93,6 +112,8 @@ public class PerfilUsuario extends AppCompatActivity {
         btnViajes = findViewById(R.id.btnViajes);
         btnVehiculos = findViewById(R.id.btnVehiculos);
         btnRutas = findViewById(R.id.btnRutas);
+        ivPerfil = findViewById(R.id.ivPerfil);
+        bntImagen = findViewById(R.id.btnImagen);
     }
 
     private void editar(){
@@ -119,7 +140,7 @@ public class PerfilUsuario extends AppCompatActivity {
     private void getDatos(){
         DatabaseReference database = FirebaseDatabase.getInstance().getReference();
         DatabaseReference ref = database.child("Usuarios");
-
+        StorageReference storageRef = storage.getReference("images/" + getEmail());
         Query q = ref.orderByChild("email").equalTo(getEmail());
         q.addValueEventListener(new ValueEventListener() {
             @Override
@@ -144,12 +165,23 @@ public class PerfilUsuario extends AppCompatActivity {
                     txtEmail.setText(email);
                     txtNombre.setText(nombre);
                     key = dataSnapshot.getKey();
+                    getImage(email);
                 }
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
             }
         });
+    }
+
+
+    public void getImage(String email){
+        StorageReference storageReference = storage.getReference("images/" + email);
+
+        Glide.with(this /* context */)
+                .load(storageReference).diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(ivPerfil);
     }
 
     public void transiciones(){
@@ -180,9 +212,41 @@ public class PerfilUsuario extends AppCompatActivity {
                 Intent intent = new Intent(PerfilUsuario.this,MainScreen.class);
                 startActivity(intent);
             }
-        });
-*/
+        });*/
+    }
 
+    private void getImagen(){
+        bntImagen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Seleccione una foto"), PICK_IMAGE);
+            }
+        });
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == PICK_IMAGE){
+            uri = data.getData();
+            Upload();
+
+
+        }
+    }
+
+    private void Upload(){
+        StorageReference storageRef = storage.getReference("images/" + getEmail());
+        storageRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                URL = storageRef.getDownloadUrl().toString();
+                Toast.makeText(getApplicationContext(),"Imagen de perfil actualizada correctamente",Toast.LENGTH_LONG).show();
+                recreate();
+            }
+        });
     }
 }
 

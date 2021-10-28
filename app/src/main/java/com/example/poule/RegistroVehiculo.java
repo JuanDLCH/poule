@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -99,7 +100,7 @@ public class RegistroVehiculo extends AppCompatActivity {
         rbtnCarro = findViewById(R.id.rbtnCarro);
         txtModelo = findViewById(R.id.txtModelo);
         txtMarca = findViewById(R.id.txtMarca);
-
+        txtPlaca.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
         getCedula();
 
     }

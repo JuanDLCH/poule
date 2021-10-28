@@ -39,6 +39,7 @@ public class EdicionDatos extends AppCompatActivity {
         getDatos();
         setDatos();
         cancelar();
+        transiciones();
     }
 
     private void conectar() {

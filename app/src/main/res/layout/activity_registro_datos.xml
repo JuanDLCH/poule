@@ -9,21 +9,21 @@
     android:theme="@style/AppTheme"
     >
 
+/---------------------------------------------------------------------------------------------------------
 
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="250dp"
-        android:textCursorDrawable="@null"
+        android:layout_marginTop="200dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_person"
         android:hint="Nombre"
         android:textColor="#fff"
         android:textColorHint="@android:color/darker_gray"
-        android:textSize="16dp"
-        />
+        android:textCursorDrawable="@null"
+        android:textSize="16dp" />
 
 
     <EditText
@@ -31,7 +31,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_person"
         android:hint="Apellidos"
@@ -46,7 +46,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
+        android:layout_marginTop="300dp"
         android:textCursorDrawable="@null"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_credit_card_24"
@@ -61,7 +61,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="350dp"
         android:background="#11000000"
         android:textCursorDrawable="@null"
         android:drawableLeft="@drawable/ic_baseline_city"
@@ -75,7 +75,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="400dp"
         android:background="#11000000"
         android:textCursorDrawable="@null"
         android:drawableLeft="@drawable/ic_baseline_calendar"
@@ -87,51 +87,121 @@
         android:focusable="false"
         android:clickable="true"
         android:maxLines="1"/>
+
     <EditText
         android:id="@+id/txtEmail"
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="500dp"
+        android:layout_marginTop="450dp"
         android:background="#11000000"
-        android:textCursorDrawable="@null"
         android:drawableLeft="@drawable/ic_baseline_mail_24"
+        android:focusable="false"
         android:hint="Email"
         android:textColor="#fff"
         android:textColorHint="@android:color/darker_gray"
-        android:textSize="16dp"
-        android:focusable="false"></EditText>
+        android:textCursorDrawable="@null"
+        android:textSize="16dp"></EditText>
 
+//----------------------------------------------------------------------------------------------------------------
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="Seleccionar foto:"
+        android:layout_alignStart="@id/txtEmail"
+        android:layout_below="@id/txtEmail"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tv1"
+        ></TextView>
+
+    <ImageButton
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@+id/txtEmail"
+        android:layout_marginTop="500dp"
+        android:background="@drawable/my_button"
+        android:src="@drawable/ic_baseline_file_upload_24"
+        android:id="@+id/btnUpload"
+        ></ImageButton>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="Listo!"
+        android:textColor="@color/white"
+        android:layout_alignStart="@+id/btnUpload"
+        android:layout_marginLeft="23dp"
+        android:layout_below="@+id/btnUpload"
+        android:id="@+id/tvListo"
+        ></TextView>
+
+    //---------------------------------------------------------------------------------------------------
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="REGISTRARSE COMO:"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginBottom="100dp"
+        android:layout_alignParentBottom="true"
+
+    ></TextView>
+
+    <LinearLayout
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:layout_marginBottom="35dp"
+        android:layout_alignParentBottom="true">
     <Button
         android:id="@+id/btnRegistrar"
-        android:layout_width="300dp"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
         android:background="@drawable/my_button"
         android:elevation="10dp"
-        android:text="Registrar Como Usuario"
+        android:text="Usuario"
+        android:layout_marginBottom="10dp"
         android:textColor="#20537E"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" >
+        </Space>
+
     <Button
         android:id="@+id/btnRegistrarC"
-        android:layout_width="300dp"
+        android:layout_width="130dp"
+        android:layout_marginBottom="10dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
         android:background="@drawable/my_button"
         android:elevation="10dp"
-        android:text="Registrar Como Conductor"
+        android:text="Conductor"
         android:textColor="#20537E"
-        android:textSize="15dp" />
+        android:textSize="15dp"
+        android:layout_marginTop="20dp"
+        />
+    </LinearLayout>
+
+    //-----------------------------------------------------------------------------------------------------
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/animationView"
         android:layout_width="250dp"
         android:layout_height="250dp"
-
+        android:layout_marginTop="-30dp"
         android:layout_centerHorizontal="true"
         app:lottie_rawRes="@raw/form"
         app:lottie_autoPlay="true"

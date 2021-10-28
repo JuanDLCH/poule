@@ -9,36 +9,36 @@
 
 
     <ImageButton
-        android:id="@+id/button1"
+        android:id="@+id/btnVehiculos"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/bmw"
-        android:padding="0dp"
-        android:scaleType="centerCrop"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="65dp"
-        android:background="@drawable/round_button" />
+        android:background="@drawable/round_button"
+        android:padding="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bmw" />
 
     <ImageButton
-        android:id="@+id/button2"
+        android:id="@+id/btnPerfil"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/perfil"
         android:padding="0dp"
         android:scaleType="centerCrop"
         android:layout_marginLeft="104dp"
-        android:layout_alignLeft="@+id/button1"
+        android:layout_alignLeft="@+id/btnVehiculos"
         android:layout_marginTop="65dp"
         android:background="@drawable/round_button" />
 
     <ImageButton
-        android:id="@+id/button3"
+        android:id="@+id/btnRutas"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/pointer"
         android:padding="0dp"
         android:scaleType="centerCrop"
-        android:layout_alignLeft="@+id/button2"
+        android:layout_alignLeft="@+id/btnPerfil"
         android:layout_marginLeft="104dp"
         android:layout_marginTop="65dp"
         android:background="@drawable/round_button" />
@@ -46,7 +46,7 @@
     <ImageButton
         android:layout_width="60sp"
         android:layout_height="60sp"
-        android:id="@+id/button4"
+        android:id="@+id/btnViajes"
         android:src="@drawable/road"
         android:padding="0dp"
         android:scaleType="centerCrop"
@@ -55,11 +55,12 @@
         android:layout_marginTop="65sp"
         ></ImageButton>
 
+//--------------------------------------------------------------------------------------------------------
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button1"
+        android:layout_below="@id/btnVehiculos"
         android:text="Vehiculos"
         android:textColor="#fff"
         android:layout_marginLeft="10sp"
@@ -68,7 +69,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button2"
+        android:layout_below="@id/btnPerfil"
         android:text="Perfil"
         android:textColor="#fff"
         android:layout_marginLeft="127sp"
@@ -77,7 +78,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button2"
+        android:layout_below="@id/btnPerfil"
         android:text="Rutas"
         android:textColor="#fff"
         android:layout_marginLeft="230sp"
@@ -85,30 +86,29 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/button2"
+        android:layout_below="@id/btnPerfil"
         android:text="Viajes"
         android:textColor="#fff"
         android:layout_marginLeft="334sp"
         ></TextView>
 
-    //---------------------------------------------------------------------------------
+    //-----------------------------------------------------------------------------------------------
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="390dp"
         android:text="Nombre"
         android:textColor="#20537E"
-        android:textStyle="bold">
-    </TextView>
+        android:textStyle="bold"></TextView>
 
     <EditText
         android:id="@+id/txtNombre"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginLeft="40sp"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="410dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_person_blue"
         android:focusable="false"
@@ -121,7 +121,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="230dp"
+        android:layout_marginTop="390dp"
         android:layout_marginRight="131dp"
         android:layout_alignParentRight="true"
         android:text="Apellidos"
@@ -134,7 +134,7 @@
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="250dp"
+        android:layout_marginTop="410dp"
         android:layout_marginRight="40dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_person_blue"
@@ -153,19 +153,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="470dp"
         android:text="Cedula"
         android:textColor="#20537E"
-        android:textStyle="bold">
-    </TextView>
+        android:textStyle="bold"></TextView>
 
     <EditText
         android:id="@+id/txtCedula"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginLeft="40sp"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="490dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_credit_card_24_blue"
         android:focusable="false"
@@ -178,7 +177,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="310dp"
+        android:layout_marginTop="470dp"
         android:layout_marginRight="130dp"
         android:layout_alignParentRight="true"
         android:text="Direccion"
@@ -191,7 +190,7 @@
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="330dp"
+        android:layout_marginTop="490dp"
         android:layout_marginRight="40dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_location_city_blue"
@@ -209,19 +208,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="390dp"
         android:layout_marginLeft="40dp"
+        android:layout_marginTop="550dp"
         android:text="Fecha de Nacimiento"
         android:textColor="#20537E"
-        android:textStyle="bold">
-    </TextView>
+        android:textStyle="bold"></TextView>
 
     <EditText
         android:id="@+id/txtFecha"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_marginLeft="40sp"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="570dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_calendar_blue"
         android:focusable="false"
@@ -234,7 +232,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="390dp"
+        android:layout_marginTop="550dp"
         android:layout_marginRight="155dp"
         android:layout_alignParentRight="true"
         android:text="Email"
@@ -247,7 +245,7 @@
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="570dp"
         android:layout_marginRight="40dp"
         android:background="#11000000"
         android:drawableLeft="@drawable/ic_baseline_mail_24_blue"
@@ -262,12 +260,55 @@
 
     /--------------------------------------------------------------------------------------------
 
-    <Button
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="20dp"
+        app:fab_addButtonColorNormal="#376FDF"
+        app:fab_addButtonColorPressed="#1923C4"
+        app:fab_expandDirection="left"
+        app:fab_labelsPosition="left"
+
+        >
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnConductor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#376FDF"
+            app:fab_icon="@drawable/ic_action_carro"
+            app:fab_size="normal"
+            app:fab_title="Registrar Conductor"></com.getbase.floatingactionbutton.FloatingActionButton>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnEditar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#376FDF"
+            app:fab_icon="@drawable/edit"
+            app:fab_size="normal"
+            app:fab_title="Editar Info."></com.getbase.floatingactionbutton.FloatingActionButton>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btnImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="#376FDF"
+            app:fab_icon="@drawable/ic_action_camera"
+            app:fab_size="normal"
+            app:fab_title="Editar Imagen."></com.getbase.floatingactionbutton.FloatingActionButton>
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <!--<Button
         android:id="@+id/btnEditar"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="530dp"
+        android:layout_marginTop="650dp"
         android:background="@drawable/my_button2"
         android:drawableRight="@drawable/ic_baseline_edit"
         android:text="Editar Informacion"
@@ -279,8 +320,25 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:visibility="invisible"
-        android:layout_marginTop="590dp"
+        android:layout_marginTop="700dp"
         android:background="@drawable/my_button2"
         android:text="Registrar Conductor"
-        android:textColor="#fff"></Button>
+        android:textColor="#fff"></Button>-->
+
+    /----------------------------------------------------------------------------------------------
+
+    <ImageView
+        android:id="@+id/ivPerfil"
+        android:layout_width="127dp"
+        android:layout_height="127dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="206dp"></ImageView>
+
+    <ImageView
+        android:id="@+id/ivPerfil2"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="190dp"
+        android:src="@drawable/border"></ImageView>
 </RelativeLayout>

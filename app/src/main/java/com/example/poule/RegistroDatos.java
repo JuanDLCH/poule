@@ -1,29 +1,45 @@
 package com.example.poule;
 
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 
 public class RegistroDatos extends AppCompatActivity {
     private String TAG;
+    String URL;
+    public static final int PICK_IMAGE = 1;
     EditText txtNombre,txtApellidos,txtDNI,txtDireccion,txtDate, txtEmail;
     Button btnRegistro, btnRegistroC;
+    ImageButton btnUpload;
+    Uri uri;
+    TextView tvListo;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
+    FirebaseStorage storage = FirebaseStorage.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +51,12 @@ public class RegistroDatos extends AppCompatActivity {
         datePicker();
         Registrar();
         RegistrarConductor();
+        getImage();
 
 
     }
+
+
     private void datePicker(){
         txtDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +92,9 @@ public class RegistroDatos extends AppCompatActivity {
         btnRegistro = findViewById(R.id.btnRegistrar);
         btnRegistroC = findViewById(R.id.btnRegistrarC);
         txtEmail = findViewById(R.id.txtEmail);
+        btnUpload = findViewById(R.id.btnUpload);
+        tvListo = findViewById(R.id.tvListo);
+
 
     }
     private void Registrar(){
@@ -127,6 +149,7 @@ public class RegistroDatos extends AppCompatActivity {
             usuario.setFechaNacimiento(date);
             usuario.setEmail(email);
             usuario.setRol(rol);
+            usuario.setUrl(URL);
             DatabaseReference newRef = mDatabase.child("Usuarios").push();
             newRef.setValue(usuario);
 
@@ -145,5 +168,39 @@ public class RegistroDatos extends AppCompatActivity {
             userEmail = "Email not  Found";
         }
         return userEmail;
+    }
+
+    private void getImage(){
+        btnUpload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent, "Seleccione una foto"), PICK_IMAGE);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == PICK_IMAGE){
+            uri = data.getData();
+            Upload();
+            tvListo.setVisibility(View.VISIBLE);
+
+        }
+    }
+
+    private void Upload(){
+        StorageReference storageRef = storage.getReference("images/" + getEmail());
+        storageRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                URL = storageRef.getDownloadUrl().toString();
+                Toast.makeText(getApplicationContext(),"Imagen de perfil subida :)",Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

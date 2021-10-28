@@ -7,4 +7,10 @@
         <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
+    <style name="etiqueta">
+        <item name="android:background">@drawable/back_fab</item>
+        <item name="android:textColor">#fff</item>
+
+    </style>
+
 </resources>
